@@ -1,0 +1,61 @@
+{
+  "name": "thue-interpreter",
+  "version": "0.1.0",
+  "description": "Simple and straightforward interpreter for the esoteric programming language Thue, written in TypeScript.",
+  "keywords": [
+    "thue",
+    "interpreter",
+    "esoteric",
+    "programming",
+    "language",
+    "typescript"
+  ],
+  "main": "dist/thue-interpreter.min.js",
+  "module": "dist/thue-interpreter.min.js",
+  "typings": "dist/src/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "author": "Phil Filippak <xenohunter@pm.me>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xenohunter/thue-interpreter.git"
+  },
+  "license": "MIT",
+  "scripts": {
+    "prebuild": "rm -rf ./dist",
+    "build": "./node_modules/typescript/bin/tsc && rollup -c rollup.config.mjs",
+    "test": "jest --coverage"
+  },
+  "jest": {
+    "transform": {
+      ".(ts|tsx)": "ts-jest"
+    },
+    "testEnvironment": "node",
+    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx)$",
+    "coveragePathIgnorePatterns": [
+      "/node_modules/",
+      "/test/"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 90,
+        "functions": 95,
+        "lines": 95,
+        "statements": 95
+      }
+    },
+    "collectCoverageFrom": [
+      "src/*.{js,ts}"
+    ]
+  },
+  "devDependencies": {
+    "@rollup/plugin-terser": "^0.4.4",
+    "@types/jest": "^29.5.14",
+    "@types/node": "^22.8.1",
+    "jest": "^29.7.0",
+    "rollup": "^4.24.0",
+    "ts-jest": "^29.2.5",
+    "typescript": "^5.6.3"
+  }
+}
