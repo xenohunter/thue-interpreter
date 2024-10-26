@@ -19,7 +19,7 @@
   "author": "Phil Filippak <xenohunter@pm.me>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/xenohunter/thue-interpreter.git"
+    "url": "git+https://github.com/xenohunter/thue-interpreter.git"
   },
   "license": "MIT",
   "scripts": {
